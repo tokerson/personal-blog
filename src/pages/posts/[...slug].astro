@@ -7,7 +7,6 @@ import Footer from "$components/Footer.astro";
 import { Image } from "astro:assets";
 import FormattedDate from "$components/FormattedDate.astro";
 import { getBlogPosts } from "src/utils";
-import BlueskyLikes from "$components/bluesky/BlueskyLikes.astro";
 import Tag from "$components/Tag.astro";
 
 export async function getStaticPaths() {
@@ -22,14 +21,10 @@ type Props = CollectionEntry<"blog">;
 const post = Astro.props;
 const { Content } = await post.render();
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/*.{jpeg,jpg,png,gif}"
-);
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*.{jpeg,jpg,png,gif}");
 const replacedHero = post.data.heroImage?.replace("../..", "/src");
 if (replacedHero && !images[replacedHero])
-  throw new Error(
-    `"${post.data.heroImage}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
-  );
+  throw new Error(`"${post.data.heroImage}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <BaseLayout {...post.data} image={post.slug + ".png"}>
@@ -55,11 +50,6 @@ if (replacedHero && !images[replacedHero])
 
       <h1 class="mt-4">{post.data.title}</h1>
       <Content />
-
-      <BlueskyLikes
-        disableLikes={post.data.disableLikes}
-        disableComments={post.data.disableComments}
-      />
     </BlogPost>
   </main>
   <Footer />

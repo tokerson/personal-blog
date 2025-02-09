@@ -26,7 +26,9 @@ const { active } = Astro.props;
         <span class="sr-only">go to home</span>
 
         <div class="text-3xl flex items-center gap-x-2">
-          {SITE_FAVICON}
+          <div class="size-8 bg-base-200 dark:bg-base-100 rounded-full flex items-center justify-center">
+            {SITE_FAVICON}
+          </div>
           <span
             class="hidden md:block font-bold text-base text-base-950 dark:text-base-50"
             >{SITE_NAME}</span

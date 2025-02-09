@@ -2,7 +2,7 @@
   "SITE": "https://tokerson.github.io/",
   "BASE": "/personal-blog",
   "SITE_TITLE": "Jakub Tokarzewski - Personal Blog",
-  "SITE_NAME": "Jakub Tokarzewski - Personal Blog",
+  "SITE_NAME": "Jakub Tokarzewski",
   "SITE_DESCRIPTION": "Welcome to my personal website! I'm Jakub Tokarzewski, a web developer with a passion for creating beautiful and functional websites. I'm always looking for new challenges and opportunities to grow as a developer. If you're interested in working with me, feel free to reach out to me through my contact information below. I'm excited to connect with you and discuss how I can help you create your next website!",
   "SITE_FAVICON": "⌨",
   "NAME": "Jakub Tokarzewski",
@@ -16,11 +16,9 @@
     "TWITTER_URL": "https://x.com/JakubTokarzews2",
     "GITHUB_URL": "https://github.com/tokerson/personal-blog",
     "INSTAGRAM_URL": "",
-    "LINKEDIN_URL": "",
+    "LINKEDIN_URL": "https://www.linkedin.com/in/jtokarzewski/",
     "YOUTUBE_URL": "",
     "SUBSTACK_URL": "",
-    "EMAIL": "kuba.tokarzewski@gmail.com",
-    "BLUESKY_URL": "https://bsky.app/profile/flo-bit.dev"
-  },
-  "BLUESKY_IDENTIFIER": "flo-bit.dev"
+    "EMAIL": "kuba.tokarzewski@gmail.com"
+  }
 }
