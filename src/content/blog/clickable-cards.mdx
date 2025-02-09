@@ -1,0 +1,67 @@
+---
+title: "Implementing accessible clickable card components"
+description: "In this post I will present a really useful technique that I always use when need to create a clickable card component that's accessible"
+pubDate: "Feb 10 2025"
+published: false
+heroImage: "/src/assets/blog-placeholder-1.jpg"
+tags: ["accessibility"]
+---
+
+import CardAsButton from "./CardAsButton.astro";
+import Solution from "./Solution.astro";
+
+Creating a clickable card component is a common challenge in almost any project and can be implemented in a numerous ways, from which some are more accessible friendly than others.
+
+The purpose of this blog post is to present the technique I use most often when I am given such a task and that I find to be the most accessible friendly.
+
+## [Other Implementations](#other-implementations)
+
+But before I present my go-to implementation I'd like to go through other implementations I encounter pretty often and I'll try to describe why they are not good enough in my opinion.
+
+```html
+<button id="card-as-a-button">
+  <div class="card">
+    <p>A title of the card</p>
+    <p>
+      A description of the card with a probably other nested link like
+      <a href="#other-implementations">See more</a>
+    </p>
+  </div>
+</button>
+
+<style>
+  p {
+    margin: 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+</style>
+
+<script>
+  document.querySelector("#card-as-a-button")?.addEventListener("click", () => alert("pressed the button"));
+</script>
+```
+
+Interactive example below:
+
+<CardAsButton client:load />
+
+Although this implementation will work it breaks the HTML rule that anchors cannot be descendants of buttons and the other way around. What's also problematic is that all of the descendants will be used when reading this button component using screen reader, while we probably expect the title of the card to be a label of the clickable card. We could fix that using `aria-label` attribute.
+
+```diff
+- <button id="card-as-a-button">
++ <button id="card-as-a-button" aria-label="A title of the card">
+```
+
+But this solution adds unneeded verbosity and duplicates the title in 2 places.
+
+## [Solution](#solution)
+
+<Solution client:load />

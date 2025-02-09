@@ -1,0 +1,28 @@
+<button id="card-as-a-button">
+  <div class="card">
+    <p>A title of the card</p>
+    <p>
+      A description of the card with a probably other nested link like
+      <a href="#other-implementations">See more</a>
+    </p>
+  </div>
+</button>
+
+<style>
+  p {
+    margin: 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+</style>
+
+<script>
+  document.querySelector("#card-as-a-button")?.addEventListener("click", () => alert("pressed the button"));
+</script>

@@ -28,26 +28,16 @@ const { posts, totalPages, currentPage, tag, showFeatured } = Astro.props;
       <slot />
     </ProseWrapper>
 
-    {
-      showFeatured ? (
-        <BigBlogEntry {...posts[0].data} slug={posts[0].slug} />
-      ) : null
-    }
+    {showFeatured && posts.length > 0 ? <BigBlogEntry {...posts[0].data} slug={posts[0].slug} /> : null}
     <div class="my-14 space-y-16 max-w-3xl">
       {
         posts.map((post: any, index: number) =>
-          index > 0 || !showFeatured ? (
-            <BlogEntry {...post.data} slug={post.slug} />
-          ) : null
+          index > 0 || !showFeatured ? <BlogEntry {...post.data} slug={post.slug} /> : null
         )
       }
     </div>
 
-    {
-      totalPages > 1 ? (
-        <Pagination current={currentPage} total={totalPages} {tag} />
-      ) : null
-    }
+    {totalPages > 1 ? <Pagination current={currentPage} total={totalPages} {tag} /> : null}
   </main>
 
   <Footer />

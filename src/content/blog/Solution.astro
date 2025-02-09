@@ -1,0 +1,36 @@
+<div class="card">
+  <button id="card-title">
+    <p>A title of the card</p>
+  </button>
+  <p>
+    A description of the card with a probably other nested link like
+    <a href="#other-implementations" id="see-more">See more</a>
+  </p>
+</div>
+
+<style>
+  p {
+    margin: 0;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  #card-title::after {
+    content: " ";
+    position: absolute;
+    inset: 0;
+  }
+</style>
+
+<script>
+  document.querySelector("#card-title")?.addEventListener("click", () => alert("pressed the button"));
+  document.querySelector("#see-more")?.addEventListener("click", (e) => e.stopPropagation());
+</script>

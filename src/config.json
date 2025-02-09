@@ -8,7 +8,7 @@
   "NAME": "Jakub Tokarzewski",
   "POSTS_PER_PAGE": 3,
   "MANUAL_DARK_MODE": true,
-  "SEARCH_ENABLED": true,
+  "SEARCH_ENABLED": false,
   "BASE_COLOR": "stone",
   "ACCENT_COLOR": "rose",
   "SOCIAL_LINKS": {
