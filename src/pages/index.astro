@@ -4,7 +4,6 @@ import { getBlogPosts } from "src/utils";
 import PostList from "$layouts/PostList.astro";
 import BlogPost from "$layouts/BlogPost.astro";
 import { Content } from "$content/info/about.mdx";
-import { Image } from "astro:assets";
 
 const posts = (await getBlogPosts()).splice(0, POSTS_PER_PAGE);
 
@@ -14,8 +13,8 @@ const total = Math.ceil((await getBlogPosts()).length / POSTS_PER_PAGE);
 <PostList {posts} totalPages={total} currentPage={1} showFeatured>
   <div class="max-w-2xl lg:max-w-3xl mx-auto mt-8 px-4">
     <div class="flex justify-between flex-col items-start sm:flex-row-reverse sm:items-end sm:pb-4">
-      <Image src="/src/assets/profile_pic.webp" alt="Jakub Tokarzewski" class="mt-0 mx-auto sm:mb-0" width="120" height="120" />
-      
+      <img src="/images/profile_pic.webp" alt="Jakub Tokarzewski" class="mt-0 mx-auto sm:m-0 size-36" width="144" height="144" />
+
       <div>
         Hey there!
         <h1 class="m-0">I'm Jakub Tokarzewski 👋</h1>
